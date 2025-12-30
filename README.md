@@ -1,0 +1,2 @@
+# KonditorShop
+Erstentwurf des Shops
