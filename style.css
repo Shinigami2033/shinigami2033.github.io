@@ -168,8 +168,25 @@ input, select, textarea {
   max-width: 800px;
 }
 
-.about.datenschutz .container,
-.about.impressum .container {
+.about.datenschutz p,
+.about.impressum p {
   text-align: left;
-  align-items: flex-start;
+  margin: 0 0 1em 0;
+  color: #444;
+}
+
+.about.datenschutz h3,
+.about.impressum h3 {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+.about.datenschutz ul,
+.about.impressum ul {
+  margin: 0 0 1.5em 1.5em;
+}
+
+.about.datenschutz li,
+.about.impressum li {
+  margin-bottom: 0.5em;
 }
