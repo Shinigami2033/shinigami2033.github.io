@@ -3,22 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ========================= -->
+<!-- Seitentitel & Meta-Daten -->
+<!-- ========================= -->
+
     <title>Mondschein Konditorei</title>
+
+<!-- Google Fonts -->
+<!-- Schriftarten können hier ausgetauscht werden -->
 
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<!-- ================================================== -->
+<!-- HERO / STARTBEREICH                                -->
+<!-- Hintergrundbilder werden im CSS geändert           -->
+<!-- ================================================== -->
 <section class="hero" id="home">
+
+<!-- Hintergrund-Ebenen -->
+<!-- Bilder ändern in style.css → .layer-cake / .layer-cupcake -->
     <div class="hero-background">
         <div class="background-layer layer-cake"></div>
         <div class="background-layer layer-cupcake"></div>
     </div>
 
+<!-- Hero Text -->
     <div class="hero-content">
         <h1>Mondschein Konditorei</h1>
         <p>Handgemachte Köstlichkeiten für jeden Anlass</p>
+
+        <!-- Call-to-Action -->
         <a href="#order" class="cta-button">Jetzt bestellen</a>
     </div>
 </section>
@@ -33,6 +51,11 @@
     </div>
 </section>
 
+<!-- ================================================== -->
+<!-- PRODUKTE                                           -->
+<!-- Produktkarten können kopiert / entfernt werden     -->
+<!-- Bilder direkt im HTML austauschen                  -->
+<!-- ================================================== -->
 <section class="products" id="products">
     <div class="container">
         <h2>Unsere Spezialitäten</h2>
@@ -65,6 +88,10 @@
     <div class="container">
         <h2>Bestellen Sie jetzt</h2>
 
+<!-- ================================================== -->
+<!-- BESTELLFORMULAR                                    -->
+<!-- IDs werden evtl. von JavaScript genutzt             -->
+<!-- ================================================== -->
         <form id="orderForm">
             <div class="form-group">
                 <label for="name">Name</label>
