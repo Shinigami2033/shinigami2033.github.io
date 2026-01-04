@@ -1,7 +1,6 @@
 /* ========================================= */
 /* 1. CSS VARIABLEN                          */
 /* ========================================= */
-
 :root {
   /* Mondschein Farbwelt */
   --primary: #E6D9A2;        /* Mondlicht / Gold */
@@ -20,7 +19,6 @@
 /* ========================================= */
 /* 2. RESET & GRUNDLAGEN                     */
 /* ========================================= */
-
 * {
   margin: 0;
   padding: 0;
@@ -37,7 +35,6 @@ body {
 /* ========================================= */
 /* 3. LAYOUT & CONTAINER                     */
 /* ========================================= */
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -52,7 +49,6 @@ body {
 /* ========================================= */
 /* 4. HERO SECTION                           */
 /* ========================================= */
-
 .hero {
   position: relative;
   height: 100vh;
@@ -121,7 +117,6 @@ body {
 /* 5. BUTTONS & INTERAKTIONEN                */
 /* Mondschein-Highlight                     */
 /* ========================================= */
-
 .cta-button,
 .submit-button {
   display: inline-block;
@@ -155,7 +150,6 @@ body {
 /* ========================================= */
 /* 6. CONTENT SECTIONS                       */
 /* ========================================= */
-
 /* ---------- About ---------- */
 .about {
   padding: 80px 0;
@@ -186,7 +180,6 @@ body {
 /* ========================================= */
 /* 7. ORDER / FORMULAR                       */
 /* ========================================= */
-
 .order-section {
   background: var(--bg-section);
   padding: 80px 0;
@@ -221,11 +214,35 @@ textarea::placeholder {
   color: var(--text-muted);
 }
 
+/* ==============================
+   8. Sticky Über-mich Banner
+============================== */
+.about-banner {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background-color: #fff7e6; /* anpassbar */
+  border-bottom: 1px solid #e6dcc9;
+
+  text-align: center;
+  padding: 0.75em 1em;
+}
+
+.about-banner a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #6b4a2b;
+}
+
+.about-banner a:hover {
+  text-decoration: underline;
+}
+
 
 /* ========================================= */
-/* 8. FOOTER                                 */
+/* 9. FOOTER                                 */
 /* ========================================= */
-
 .footer {
   background: #060B1A;
   color: var(--text-muted);
@@ -240,10 +257,9 @@ textarea::placeholder {
 }
 
 /* ========================================= */
-/* 9. RECHTLICHE SEITEN                      */
+/* 10. RECHTLICHE SEITEN                      */
 /* Datenschutz & Impressum                  */
 /* ========================================= */
-
 .about.datenschutz p,
 .about.impressum p {
   color: var(--text-muted);
@@ -267,9 +283,8 @@ textarea::placeholder {
 }
 
 /* ========================================= */
-/* 10. RESPONSIVE DESIGN (Auskommentiert 11. übernimmt */
+/* 11. RESPONSIVE DESIGN (Auskommentiert 11. übernimmt */
 /* ========================================= */
-
 /* @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.5rem;
@@ -287,13 +302,11 @@ textarea::placeholder {
 }
 
 /* ========================================= */
-/* 11. MOBILE OPTIMIERUNG – STARTSEITE           */
+/* 12. MOBILE OPTIMIERUNG – STARTSEITE           */
 /* ========================================= */
-
 @media (max-width: 768px) {
 
   /* ---------- Hero ---------- */
-
   .hero {
     height: 80vh; /* weniger Scrollen */
     padding: 40px 20px;
@@ -313,15 +326,19 @@ textarea::placeholder {
     margin: 15px 0 25px;
   }
 
-  /* ---------- Buttons ---------- */
+  /* ---------- Sticky Über-mich Banner ---------- */
+    .about-banner {
+    font-size: 0.95rem;
+    padding: 0.6em;
+  }
 
+  /* ---------- Buttons ---------- */
   .cta-button {
     padding: 16px 28px;
     font-size: 1rem;
   }
 
   /* ---------- Sections ---------- */
-
   .about,
   .products,
   .order-section {
@@ -334,7 +351,6 @@ textarea::placeholder {
   }
 
   /* ---------- Products ---------- */
-
   .product-grid {
     gap: 20px;
   }
@@ -344,7 +360,6 @@ textarea::placeholder {
   }
 
   /* ---------- Form ---------- */
-
   form {
     padding: 25px;
   }
