@@ -126,7 +126,7 @@ body {
     var(--primary),
     var(--primary-dark)
   );
-  color: #1a1a1a;
+  color: oklab(21.779% 0 -0.00002);
   text-decoration: none;
   border-radius: 50px;
   font-weight: 600;
@@ -204,7 +204,7 @@ main:focus-within ~ .floating-cta {
   border-radius: 30px;
 
   background-color: #6b4a2b;
-  color: #fff;
+  color: #1a1a1a;
   font-weight: 600;
   text-decoration: none;
 
