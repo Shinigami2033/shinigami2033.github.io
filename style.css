@@ -522,3 +522,63 @@ body {
 
 
 }
+
+/* ==============================
+   Formular Seite
+============================== */
+
+.form-page {
+  background: linear-gradient(
+    to bottom,
+    #1e1b18,
+    #2a241f
+  );
+  color: #eee;
+}
+
+.form-page h1 {
+  color: #f5e6c8;
+}
+
+.order-form {
+  max-width: 500px;
+  margin-top: 2em;
+}
+
+.order-form label {
+  display: block;
+  margin-bottom: 1.2em;
+  font-weight: 500;
+}
+
+.order-form input,
+.order-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+
+  border-radius: 8px;
+  border: none;
+
+  background-color: #2a241f;
+  color: #fff;
+}
+
+.order-form input:focus,
+.order-form textarea:focus {
+  outline: 2px solid #6b4a2b;
+}
+/*.order-form .submit-button {
+.order-form .submit-button {
+  margin-top: 1.5em;
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--primary-dark)
+  );
+  color: #1a1a1a;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s, filter 0.3s;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Bestellung – Mondschein Konditorei</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Zurück Button -->
+  <a href="index.html" class="cta-button floating-cta">
+    Startseite
+  </a>
+
+  <main class="page form-page">
+    <div class="container">
+
+      <h1>Jetzt bestellen</h1>
+      <p>
+        Erzählen Sie mir von Ihrer Wunschkreation –  
+        ich melde mich persönlich bei Ihnen zurück.
+      </p>
+
+      <!-- Formspree Formular -->
+      <form action="https://formspree.io/f/xykyrely"
+            method="POST"
+            class="order-form">
+
+        <label>
+          Name
+          <input type="text" name="name" required>
+        </label>
+
+        <label>
+          E-Mail
+          <input type="email" name="email" required>
+        </label>
+
+        <label>
+          Anlass
+          <input type="text" name="occasion">
+        </label>
+
+        <label>
+          Nachricht
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+
+        <button type="submit" class="cta-button">
+          Anfrage senden
+        </button>
+
+      </form>
+
+    </div>
+  </main>
+
+</body>
+</html>
