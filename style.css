@@ -563,14 +563,14 @@ body {
    15. Formular Seite
 ============================== */
 
-.form-page {
+/*.form-page {
   background: linear-gradient(
     to bottom,
     #1e1b18,
     #2a241f
   );
   color: #eee;
-}
+}*/
 
 .form-page h1 {
   color: #f5e6c8;
@@ -631,3 +631,12 @@ body {
   cursor: not-allowed;
   transform: none;
 }
+
+/* ========================================= */
+/* 16. ANIMATIONEN UND EFFEKTE                */
+/* ========================================= */
+/* Sanftes Einblenden von Elementen */
+/*.fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+} */
