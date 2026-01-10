@@ -562,12 +562,16 @@ body {
 
   background-color: #2a241f;
   color: #fff;
+
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .order-form input:focus,
 .order-form textarea:focus {
-  outline: 2px solid #6b4a2b;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(230, 217, 162, 0.45);
 }
+
 .order-form .submit-button {
   margin-top: 1.5em;
   background: linear-gradient(
@@ -584,4 +588,10 @@ body {
 .order-form .submit-button:hover {
   transform: scale(1.05);
   filter: brightness(1.1);
+}
+
+.order-form .submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
