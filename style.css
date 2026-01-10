@@ -569,7 +569,6 @@ body {
   outline: 2px solid #6b4a2b;
 }
 .order-form .submit-button {
-.order-form .submit-button {
   margin-top: 1.5em;
   background: linear-gradient(
     135deg,
@@ -582,15 +581,7 @@ body {
   cursor: pointer;
   transition: transform 0.3s, filter 0.3s;
 }
-  margin-top: 1.5em;
-  background: linear-gradient(
-    135deg,
-    var(--primary),
-    var(--primary-dark)
-  );
-  color: #1a1a1a;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s, filter 0.3s;
+.order-form .submit-button:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
