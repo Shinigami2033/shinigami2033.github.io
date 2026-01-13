@@ -563,14 +563,14 @@ body {
    15. Formular Seite
 ============================== */
 
-/*.form-page {
+.form-page {
   background: linear-gradient(
     to bottom,
     #1e1b18,
     #2a241f
   );
   color: #eee;
-}*/
+}
 
 .form-page h1 {
   color: #f5e6c8;
