@@ -637,17 +637,6 @@ body {
   text-align: center;
 }
 
-@media (max-width: 480px) {
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-grid img {
-    height: 220px;
-  }
-}
-
-
   /* ---------- Galerie Button auf Startseite ---------- */
   .gallery-cta {
     margin-top: 40px;
@@ -658,6 +647,19 @@ body {
     font-size: 0.95rem;
   }
 
+}
+/* ========================================= */
+/* MOBILE – Kleine Phones                    */
+/* ========================================= */
+@media (max-width: 480px) {
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid img {
+    height: 220px;
+  }
 }
 
 /* ==============================
