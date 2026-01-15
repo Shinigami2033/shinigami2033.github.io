@@ -623,18 +623,25 @@ body {
 
   /* ---------- Galerie Seite ---------- */
 
-  .gallery-grid {
-    gap: 16px;
-  }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ✅ 2 Spalten auf Mobile */
+  gap: 16px;
+}
 
-  .gallery-grid img {
-    height: 200px;
-  }
+.gallery-grid img {
+  width: 100%;
+  height: 180px;          /* größer & ruhiger */
+  object-fit: cover;     /* füllt Kachel sauber */
+  border-radius: 14px;
+}
 
-  .gallery-intro {
-    font-size: 1rem;
-    padding: 0 10px;
-  }
+.gallery-intro {
+  font-size: 1rem;
+  padding: 0 10px;
+  text-align: center;
+}
+
 
   /* ---------- Galerie Button auf Startseite ---------- */
   .gallery-cta {
@@ -645,11 +652,6 @@ body {
     padding: 14px 26px;
     font-size: 0.95rem;
   }
-
-
-
-
-
 
 }
 
