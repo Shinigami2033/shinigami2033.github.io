@@ -174,8 +174,8 @@ body {
   right: 20px;
   z-index: 2000;
 
-  padding: 12px 22px;
-  border-radius: 30px;
+  padding: 12px 20px;
+  border-radius: 999px;
 
   background-color: rgba(230, 217, 162, 0.85);
   backdrop-filter: blur(6px);
@@ -187,18 +187,20 @@ body {
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 
   transition:
-    opacity 0.4s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
+/* dezenter beim Scrollen */
 .floating-cta.scrolled {
-  opacity: 0.65;
+  opacity: 0.6;
 }
 
-.floating-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+/* Hover nur Desktop */
+@media (hover: hover) {
+  .floating-cta:hover {
+    transform: translateY(-2px);
+  }
 }
 
 /* ========================================= */
