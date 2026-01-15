@@ -169,10 +169,10 @@ body {
 /* ========================================= */
 
 .floating-cta {
-  
+  position: sticky;
   top: 20px;
   right: 20px;
-  z-index: 2000;
+  z-index: 9999;
 
   padding: 12px 20px;
   border-radius: 999px;
@@ -391,7 +391,7 @@ textarea::placeholder {
    12. Page Fade Transition
 ============================== */
 
-body {
+.page-wrapper {
   animation: fadeIn 0.6s ease forwards;
 }
 
