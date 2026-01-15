@@ -9,7 +9,7 @@
 <body>
 
   <!-- Floating Zurück Button -->
-  <a href="index.html" class="cta-button floating-cta">
+  <a href="index.html" class="floating-cta">
     Startseite
   </a>
 
@@ -55,6 +55,16 @@
 
     </div>
   </main>
+  
+<script>
+  const cta = document.querySelector('.floating-cta');
+
+  if (cta) {
+    window.addEventListener('scroll', () => {
+      cta.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  }
+</script>
 
 </body>
 </html>

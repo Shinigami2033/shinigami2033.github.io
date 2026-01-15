@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="about.html" class="cta-button floating-cta">
+    <a href="about.html" class="floating-cta">
   Über mich
 </a>
 
@@ -117,5 +117,16 @@ Jedes Stück ist ein kleines Kunstwerk – geschaffen mit Ruhe, Präzision und L
 </footer>
 
 <script src="script.js"></script>
+
+<script>
+  const cta = document.querySelector('.floating-cta');
+
+  if (cta) {
+    window.addEventListener('scroll', () => {
+      cta.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  }
+</script>
+
 </body>
 </html>

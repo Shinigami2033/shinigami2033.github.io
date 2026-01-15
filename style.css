@@ -210,7 +210,8 @@ main:focus-within ~ .floating-cta {
 
 
 /* ==============================
-   Floating CTA Button */
+   Floating CTA Button
+============================== */
 
 .floating-cta {
   position: fixed;
@@ -221,7 +222,9 @@ main:focus-within ~ .floating-cta {
   padding: 12px 22px;
   border-radius: 30px;
 
-  background-color: #6b4a2b;
+  background-color: rgba(230, 217, 162, 0.85);
+  backdrop-filter: blur(6px);
+
   color: #1a1a1a;
   font-weight: 600;
   text-decoration: none;
@@ -232,6 +235,10 @@ main:focus-within ~ .floating-cta {
     opacity 0.4s ease,
     transform 0.3s ease,
     box-shadow 0.3s ease;
+}
+
+.floating-cta.scrolled {
+  opacity: 0.65;
 }
 
 .floating-cta:hover {
@@ -553,6 +560,14 @@ body {
     font-size: 1rem;
   }
 
+  .floating-cta {
+  top: 12px;
+  right: 12px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+}
+
+
   /* ---------- Sections ---------- */
   .about,
   .products,
@@ -583,14 +598,7 @@ body {
   }
 
   
-  /* ---------- Floating CTA Button ---------- */
-  .floating-cta {
-    padding: 12px 18px;
-    font-size: 0.9rem;
-    box-shadow:
-      0 0 12px rgba(230, 217, 162, 0.25),
-      0 6px 14px rgba(0,0,0,0.4);
-  }
+
 
   /* ---------- Formular Seite ---------- */
   .order-form {

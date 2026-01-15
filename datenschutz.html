@@ -111,10 +111,20 @@
         </p>
 
         <p style="margin-top:40px;">
-            <a href="index.html" class="cta-button">← Zurück zur Startseite</a>
+            <a href="index.html" class="floating-cta">← Zurück zur Startseite</a>
         </p>
     </div>
 </section>
+
+<script>
+  const cta = document.querySelector('.floating-cta');
+
+  if (cta) {
+    window.addEventListener('scroll', () => {
+      cta.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  }
+</script>
 
 </body>
 </html>
