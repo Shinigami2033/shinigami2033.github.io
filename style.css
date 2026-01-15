@@ -648,19 +648,7 @@ body {
   }
 
 }
-/* ========================================= */
-/* MOBILE – Kleine Phones                    */
-/* ========================================= */
-@media (max-width: 480px) {
 
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-grid img {
-    height: 220px;
-  }
-}
 
 /* ==============================
    16. Formular Seite
