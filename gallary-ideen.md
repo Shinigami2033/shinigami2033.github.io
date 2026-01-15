@@ -12,3 +12,7 @@ Mobile-first Galerie (Swipe-freundlich)
 3. Instagram-ähnliche Ansicht
 4. dezente Fade-In Animation
 5. Text-Overlay mit Anlass (Hochzeit, Geburtstag …)
+6. Lightbox für die Galerie (Tippen = Vollbild)
+7. Lazy Loading für Bilder (Performance!)
+8. Touch-Optimierung (größere Tap-Flächen)
+9. Kleine Galerie-Finishes (Hover → Tap, sanfter Zoom)
