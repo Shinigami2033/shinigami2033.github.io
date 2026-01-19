@@ -381,6 +381,33 @@ textarea::placeholder {
    10. About Page – Mondschein Stil
 ============================== */
 
+
+.about.page {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hintergrundbild wie Hero-Layer */
+.about.page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("assets/about-bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  opacity: 0.15; /* fein & elegant */
+  z-index: 0;
+}
+
+/* Inhalt über dem Hintergrund halten */
+.about.page > .container {
+  position: relative;
+  z-index: 1;
+}
+
 .about.page {
   background: linear-gradient(
     to bottom,
