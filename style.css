@@ -331,6 +331,36 @@ textarea::placeholder {
   cursor: pointer;
 }
 
+/* dropdown Stil */
+.order-form select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+
+  border-radius: 10px;
+  border: none;
+
+  background-color: #2a241f;   /* dunkler Hintergrund */
+  color: #f5f2ea;              /* helle Schrift */
+
+  font-size: 0.95rem;
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Custom Pfeil für Dropdown */
+.order-form select {
+  background-image: url("data:image/svg+xml,%3Csvg fill='white' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 18px;
+}
+
+
+
 /* ========================================= */
 /* 9. FOOTER                                 */
 /* ========================================= */
