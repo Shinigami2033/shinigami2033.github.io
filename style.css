@@ -8,7 +8,9 @@
 
   --bg-main: #0B132B;        /* Tiefes Nachtblau */
   --bg-section: #1C2541;     /* Sektionen */
-  --bg-card: #ffffff;        /* Karten / Boxen */
+  --bg-card: #24305E;        /* Karten / Boxen */
+  --bg-product-card: #ffffff; /* Produktkarten */
+  --text-product: #1a1a1a;    /* Produkttext */
 
   --text-main: #EAEAEA;      /* Haupttext */
   --text-muted: #000000;     /* Nebentext */
@@ -229,7 +231,7 @@ body {
   padding: 20px;
   text-align: center;
   border-radius: 12px;
-  background: var(--bg-card);
+  background: var(--bg-product-card);
   box-shadow: 0 10px 30px rgba(0,0,0,.4);
 }
 
@@ -257,7 +259,7 @@ body {
 .product-name {
   font-size: 1.2rem;
   margin: 15px 0 10px;
-  color: var(--text-main);
+  color: var(--text-product);
   font-weight: 500;
 }
 
