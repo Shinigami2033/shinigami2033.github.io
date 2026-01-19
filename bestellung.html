@@ -42,6 +42,73 @@
           Anlass
           <input type="text" name="occasion">
         </label>
+        <label>
+          Datum der Veranstaltung
+          <input type="date" name="event_date">
+        </label>
+        <label>
+          Produktart
+          <select name="product_type" required>
+            <option value="" disabled selected>Bitte wählen</option>
+            <option value="Torte">Torte</option>
+            <option value="Kuchen">Kuchen</option>
+            <option value="Cupcakes">Cupcakes</option>
+            <option value="Plätzchen">Plätzchen</option>
+            <option value="Sonstiges">Sonstiges</option>
+          </select>
+        </label>  
+        <label>
+          Geschmacksrichtung
+          <input type="text" name="flavor" required>
+        </label>
+        <label>
+          Größe / Menge
+          <input type="text" name="size_quantity" required>
+        </label>
+
+        <label>
+          Alkohol
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="alcohol" value="Mit Alkohol" required>
+              Mit Alkohol
+            </label>
+
+            <label class="radio-option">
+              <input type="radio" name="alcohol" value="Ohne Alkohol">
+              Ohne Alkohol
+            </label>
+          </div>
+        </label>
+
+        <label>
+          Besondere Wünsche / Anmerkungen
+          <input type="text" name="special_requests">
+        </label>
+
+        <label>
+          Budgetvorstellung (optional)
+          <input type="text" name="budget">
+        </label>  
+
+        <label>
+          Abhol- oder Lieferdatum
+          <input type="date" name="pickup_delivery_date" required>
+        </label>
+
+        <label>
+          Gelifert kann in einem Umkreis von 30km um Schwaan in MV.
+        </label>
+
+        <label>
+          Telefonnummer (optional)
+          <input type="tel" name="phone">
+        </label>
+
+        <label>
+          Allergien oder Unverträglichkeiten (optional)
+          <input type="text" name="allergies">
+        </label>        
 
         <label>
           Nachricht

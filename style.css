@@ -88,7 +88,7 @@ body {
 
 /* Hero Hintergrundbilder */
 .layer-cake {
-  background-image: url("assets/Logo1.jpeg");
+  background-image: url("assets/Logo1_4K.png");
   opacity: 0.3;
 }
 /*
@@ -269,11 +269,14 @@ body {
 /* ========================================= */
 /* 8. ORDER / FORMULAR                       */
 /* ========================================= */
+
+/* Order Section */
 .order-section {
   background: var(--bg-section);
   padding: 80px 0;
 }
 
+/* Formular Stil */
 form {
   max-width: 600px;
   margin: auto;
@@ -283,10 +286,12 @@ form {
   border-radius: 10px;
 }
 
+/* Formular Gruppen */
 .form-group {
   margin-bottom: 20px;
 }
 
+/* Labels */
 input,
 select,
 textarea {
@@ -298,12 +303,33 @@ textarea {
   border-radius: 5px;
 }
 
+/* Placeholder Stil */
 input::placeholder,
 textarea::placeholder {
   color: var(--text-muted);
 }
 
+/* Radio Buttons Gruppe */
+.radio-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 8px;
+}
 
+/* Einzelne Radio Option */
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+/* Radio Input Stil */
+.radio-option input {
+  accent-color: var(--primary);
+  cursor: pointer;
+}
 
 /* ========================================= */
 /* 9. FOOTER                                 */
