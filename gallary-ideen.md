@@ -16,3 +16,25 @@ Mobile-first Galerie (Swipe-freundlich)
 7. Lazy Loading für Bilder (Performance!)
 8. Touch-Optimierung (größere Tap-Flächen)
 9. Kleine Galerie-Finishes (Hover → Tap, sanfter Zoom)
+10. Auto-Lightbox
+11. Klick-Zoom
+12. Kategorien
+13. Filter (Torten / Desserts / Hochzeit / Event)
+14. Lazy Loading
+15. Masonry Layout
+16. Progressive Loading
+17. Blur-Placeholder
+18. Fade-In Animation
+19. Skeleton Loader
+20. eine Version mit: automatischer Bildnummerierung
+z.B.
+
+1.jpg
+2.jpg
+3.jpg
+4.jpg
+
+
+und JS läuft automatisch von 1–100
+→ ohne manuelle Liste
+
