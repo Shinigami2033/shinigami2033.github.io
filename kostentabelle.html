@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kostentabelle – Mondschein Konditorei</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="cost-page">
+
+  <!-- Floating Zurück Button -->
+  <a href="index.html" class="cta-button floating-cta">
+    Startseite
+  </a>
+  <div class="page-wrapper">
+
+  <main class="page cost-content">
+    <div class="container">
+
+      <h1>Kostentabelle</h1>
+      <p>
+        Eine erste Orientierung zu Preisen und Größen – individuelle Wünsche
+        werden gerne persönlich abgestimmt.
+      </p>
+
+      <div class="cost-table-wrapper">
+        <table class="cost-table">
+          <thead>
+            <tr>
+              <th>Produkt</th>
+              <th>Größe / Menge</th>
+              <th>Preis ab</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Torten</td>
+              <td>16 cm · 8–10 Stücke</td>
+              <td>45 €</td>
+            </tr>
+            <tr>
+              <td>Hochzeitstorten</td>
+              <td>2–3 Etagen</td>
+              <td>180 €</td>
+            </tr>
+            <tr>
+              <td>Petit Fours</td>
+              <td>12 Stück</td>
+              <td>28 €</td>
+            </tr>
+            <tr>
+              <td>Macarons</td>
+              <td>12 Stück</td>
+              <td>22 €</td>
+            </tr>
+            <tr>
+              <td>Cupcakes</td>
+              <td>12 Stück</td>
+              <td>26 €</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="cost-note">
+        Die Preise verstehen sich als Richtwerte und variieren je nach Design,
+        Füllungen und Dekoration.
+      </p>
+
+    </div>
+  </main>
+  </div>
+
+  <script>
+    const cta = document.querySelector('.floating-cta');
+
+    if (cta) {
+      window.addEventListener('scroll', () => {
+        cta.classList.toggle('scrolled', window.scrollY > 20);
+      });
+    }
+  </script>
+
+</body>
+</html>

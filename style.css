@@ -157,6 +157,10 @@ body {
 /* ---------- Galerie CTA ---------- */
 .gallery-cta {
   margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
   text-align: center;
 }
 
@@ -447,6 +451,63 @@ textarea::placeholder {
 
 .about.page li {
   margin-bottom: 0.6em;
+}
+
+/* ==============================
+   10b. Kostentabelle Page
+============================== */
+
+.cost-page {
+  background: linear-gradient(
+    to bottom,
+    #1e1b18,
+    #2a241f
+  );
+  color: #eee;
+}
+
+.cost-page h1,
+.cost-page h2 {
+  color: #f5e6c8;
+}
+
+.cost-page p {
+  color: #ddd;
+  line-height: 1.7;
+}
+
+.cost-table-wrapper {
+  margin-top: 2rem;
+  overflow-x: auto;
+}
+
+.cost-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 520px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.cost-table th,
+.cost-table td {
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: left;
+}
+
+.cost-table th {
+  color: #f5e6c8;
+  font-weight: 600;
+  background: rgba(245, 230, 200, 0.08);
+}
+
+.cost-table td {
+  color: #ddd;
+}
+
+.cost-note {
+  margin-top: 1.5rem;
+  color: #cfc7b8;
 }
 
 
@@ -749,6 +810,7 @@ textarea::placeholder {
   /* ---------- Galerie Button auf Startseite ---------- */
   .gallery-cta {
     margin-top: 40px;
+    gap: 12px;
   }
 
   .cta-button.outline {
