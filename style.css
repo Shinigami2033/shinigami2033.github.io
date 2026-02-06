@@ -809,17 +809,14 @@ textarea::placeholder {
 
   /* ---------- Galerie Button auf Startseite ---------- */
   .gallery-cta {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-}
-/* Auf größeren Bildschirmen nebeneinander */
-@media (min-width: 768px) {
-  .gallery-cta {
-    flex-wrap: nowrap;
-  }
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    gap: 16px !important;
+    width: 100% !important;
+    grid-column: 1 / -1; /* ERGÄNZUNG: Belegt alle Grid-Spalten */
+    max-width: none !important;
 }
 
 
