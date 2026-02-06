@@ -809,9 +809,19 @@ textarea::placeholder {
 
   /* ---------- Galerie Button auf Startseite ---------- */
   .gallery-cta {
-    margin-top: 40px;
-    gap: 12px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+/* Auf größeren Bildschirmen nebeneinander */
+@media (min-width: 768px) {
+  .gallery-cta {
+    flex-wrap: nowrap;
   }
+}
+
 
   .cta-button.outline {
     padding: 14px 26px;
