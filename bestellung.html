@@ -23,11 +23,13 @@
         ich melde mich persönlich bei dir zurück.
       </p>
 
-      <!-- Formspree Formular -->
-      <form action="https://formspree.io/f/xykyrely"
+      <!-- Web3Forms Formular -->
+      <form action="https://api.web3forms.com/submit"
             method="POST"
             enctype="multipart/form-data"
             class="order-form">
+        <!-- Web3Forms API Key -->
+        <input type="hidden" name="access_key" value="5aadd189-2596-4005-a08b-9b1ac831f088">
 
         <label>
           Name
@@ -77,7 +79,7 @@
         </label>
 
         <label>
-          Besondere Wünsche / Anmerkungen
+          Besondere Wünsche / Anmerkungen (optional)
           <input type="text" name="special_requests">
         </label>
 
@@ -97,7 +99,7 @@
 
         <label>
           Telefonnummer
-          <input type="tel" name="phone">
+          <input type="tel" name="phone" required>
         </label>
 
         <label>
@@ -107,7 +109,7 @@
 
         <label>
           Nachricht
-          <textarea name="message" rows="5" required></textarea>
+          <textarea name="message" rows="5"></textarea>
         </label>
 
         <label>
@@ -137,6 +139,5 @@
     });
   }
 </script>
-
 </body>
 </html>
