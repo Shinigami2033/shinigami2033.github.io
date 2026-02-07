@@ -26,6 +26,7 @@
       <!-- Formspree Formular -->
       <form action="https://formspree.io/f/xykyrely"
             method="POST"
+            enctype="multipart/form-data"
             class="order-form">
 
         <label>
@@ -36,11 +37,6 @@
         <label>
           E-Mail
           <input type="email" name="email" required>
-        </label>
-
-        <label>
-          Anlass
-          <input type="text" name="occasion">
         </label>
 
         <label>
@@ -100,7 +96,7 @@
         </label>
 
         <label>
-          Telefonnummer (optional)
+          Telefonnummer
           <input type="tel" name="phone">
         </label>
 
@@ -112,6 +108,15 @@
         <label>
           Nachricht
           <textarea name="message" rows="5" required></textarea>
+        </label>
+
+        <label>
+          Referenzbild (optional)
+          <input
+          type="file"
+          name="reference_image"
+          accept="image/png, image/jpeg, image/jpg, image/gif"
+          multiple>
         </label>
 
         <button type="submit" class="submit-button">
