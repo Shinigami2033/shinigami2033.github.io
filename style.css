@@ -352,7 +352,7 @@ textarea::placeholder {
   border: none;
 
   background-color: #2a241f;   /* dunkler Hintergrund */
-  color: #f5f2ea;              /* helle Schrift */
+  color: #b1b0aa;              /* helle Schrift */
 
   font-size: 0.95rem;
   cursor: pointer;
@@ -369,6 +369,26 @@ textarea::placeholder {
   background-position: right 12px center;
   background-size: 18px;
 }
+
+/* ---------- Bildvorschau ---------- */
+.image-preview {
+  margin-top: 12px;
+}
+.image-preview img {
+  max-width: 180px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  display: block;
+}
+
+/* Fehleranzeige bei Bild upload */
+.upload-error {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #e07a7a;
+}
+
+
 
 
 

@@ -118,18 +118,28 @@
           type="file"
           name="reference_image"
           accept="image/png, image/jpeg, image/jpg, image/gif"
-          multiple>
+          id="imageUpload"
+          multiple>        
         </label>
+        <div id="imagePreview" class="image-preview"></div>
+        <div id="uploadError" class="upload-error"></div>
 
+        <label> max. 10 MB pro Bild 
+          <br>
+           max. 3 Bilder</label>
+        
         <button type="submit" class="submit-button">
           Anfrage senden
         </button>
-
+        <label>
+          Mit dem Absenden dieses Formulars erklärst du dich damit einverstanden, dass deine Daten gemäß unserer <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> verarbeitet werden。
+        </label>
       </form>
 
     </div>
   </main>
   </div>
+  <!-- JavaScript für Scroll-Effekt der CTA -->
 <script>
   const cta = document.querySelector('.floating-cta');
 
@@ -139,5 +149,64 @@
     });
   }
 </script>
+
+<!-- JavaScript für Bildvorschau -->
+<script>
+  const errorBox = document.getElementById('uploadError');
+
+function showError(message) {
+  if (errorBox) {
+    errorBox.textContent = message;
+  }
+}
+
+function clearError() {
+  if (errorBox) {
+    errorBox.textContent = '';
+  }
+}
+
+  const uploadInput = document.getElementById('imageUpload');
+  const preview = document.getElementById('imagePreview');
+
+  const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
+  const MAX_IMAGES = 3; // Maximal 3 Bilder
+  let selectedFiles = []; // Array zur Speicherung der ausgewählten Dateien
+
+  if (uploadInput) {
+  uploadInput.addEventListener('change', () => {
+  clearError();
+
+  const newFiles = Array.from(uploadInput.files);
+
+  for (const file of newFiles) {
+    if (selectedFiles.length >= MAX_IMAGES) {
+      showError('Maximal 3 Bilder erlaubt.');
+      break;
+    }
+
+    if (file.size > MAX_FILE_SIZE) {
+      showError('Ein Bild ist größer als 10 MB.');
+      continue;
+    }
+
+    if (!file.type.startsWith('image/')) {
+      showError('Bitte nur Bilddateien hochladen.');
+      continue;
+    }
+
+    selectedFiles.push(file);
+
+    const img = document.createElement('img');
+    img.src = URL.createObjectURL(file);
+    preview.appendChild(img);
+  }
+
+  uploadInput.value = '';
+});
+    }
+  
+</script>
+
 </body>
 </html>
