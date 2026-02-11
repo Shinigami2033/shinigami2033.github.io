@@ -152,57 +152,59 @@
 
 <!-- JavaScript für Bildvorschau -->
 <script>
+  const uploadInput = document.getElementById('imageUpload');
+  const preview = document.getElementById('imagePreview');
   const errorBox = document.getElementById('uploadError');
 
-function showError(message) {
-  if (errorBox) {
-    errorBox.textContent = message;
-  }
-}
-
-function clearError() {
-  if (errorBox) {
-    errorBox.textContent = '';
-  }
-}
-
-uploadInput.addEventListener('change', () => {
-  clearError();
-
-  const file = uploadInput.files[0];
-
-  // Preview leeren
-  preview.innerHTML = '';
-
-  if (!file) return;
-
-  const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
-
-  // ❌ Dateigröße prüfen
-  if (file.size > MAX_FILE_SIZE) {
-    showError('Das Bild darf maximal 5 MB groß sein.');
-    uploadInput.value = '';
-    return;
+  function showError(message) {
+    if (errorBox) {
+      errorBox.textContent = message;
+    }
   }
 
-  // ❌ Typ prüfen
-  if (!file.type.startsWith('image/')) {
-    showError('Bitte nur Bilddateien hochladen.');
-    uploadInput.value = '';
-    return;
+  function clearError() {
+    if (errorBox) {
+      errorBox.textContent = '';
+    }
   }
 
-  // ✅ Vorschau anzeigen
-  const img = document.createElement('img');
-  img.src = URL.createObjectURL(file);
-  img.style.maxWidth = '300px';
+  if (uploadInput && preview) {
+    uploadInput.addEventListener('change', () => {
+      clearError();
 
-  preview.appendChild(img);
-});
+      const file = uploadInput.files[0];
 
+      // Preview leeren
+      preview.innerHTML = '';
 
+      if (!file) return;
 
-  
+      const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
+
+      // Dateigröße prüfen
+      if (file.size > MAX_FILE_SIZE) {
+        showError('Das Bild darf maximal 5 MB groß sein.');
+        uploadInput.value = '';
+        return;
+      }
+
+      // Typ prüfen
+      if (!file.type.startsWith('image/')) {
+        showError('Bitte nur Bilddateien hochladen.');
+        uploadInput.value = '';
+        return;
+      }
+
+      // Vorschau anzeigen
+      const img = document.createElement('img');
+      img.src = URL.createObjectURL(file);
+      img.style.maxWidth = '300px';
+      img.alt = 'Vorschau';
+
+      preview.appendChild(img);
+    });
+  }
+</script>
 </script>
 
 </body>
