@@ -122,8 +122,12 @@
           id="imageUpload">        
         </label>
         <div id="imagePreview" class="image-preview"></div>
-        <div id="uploadError" class="upload-error"></div>
+        <button type="button" id="removeImageBtn" class="remove-image" style="display:none;">
+        Bild entfernen
+        </button>
 
+        <div id="uploadError" class="upload-error"></div>
+        
         <label> max. 5 MB pro Bild 
           <br>
            max. 1 Bilder</label>
@@ -152,59 +156,83 @@
 
 <!-- JavaScript für Bildvorschau -->
 <script>
-  const uploadInput = document.getElementById('imageUpload');
-  const preview = document.getElementById('imagePreview');
-  const errorBox = document.getElementById('uploadError');
+const uploadInput = document.getElementById('imageUpload');
+const preview = document.getElementById('imagePreview');
+const removeBtn = document.getElementById('removeImageBtn');
+const errorBox = document.getElementById('uploadError');
 
-  function showError(message) {
-    if (errorBox) {
-      errorBox.textContent = message;
+const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
+
+function showError(message) {
+  if (errorBox) {
+    errorBox.textContent = message;
+    errorBox.style.display = 'block';
+    errorBox.setAttribute('role', 'alert');
+  } else {
+    console.error('Upload error:', message);
+  }
+}
+
+function clearError() {
+  if (errorBox) {
+    errorBox.textContent = '';
+    errorBox.style.display = '';
+    errorBox.removeAttribute('role');
+  }
+}
+
+function resetImage(preserveError = false) {
+  if (uploadInput) uploadInput.value = '';
+  if (preview) preview.innerHTML = '';
+  if (removeBtn) removeBtn.style.display = 'none';
+  if (!preserveError) clearError();
+}
+
+if (uploadInput) {
+  uploadInput.addEventListener('change', () => {
+    clearError();
+    if (preview) preview.innerHTML = '';
+
+    const file = uploadInput.files[0];
+    if (!file) return;
+
+    if (uploadInput.files.length > 1) {
+      showError('Bitte maximal 1 Bild auswählen.');
+      resetImage(true);
+      return;
     }
-  }
 
-  function clearError() {
-    if (errorBox) {
-      errorBox.textContent = '';
+    // Dateigröße prüfen
+    if (file.size > MAX_FILE_SIZE) {
+      showError('Das Bild darf maximal 5 MB groß sein.');
+      resetImage(true);
+      return;
     }
-  }
 
-  if (uploadInput && preview) {
-    uploadInput.addEventListener('change', () => {
-      clearError();
+    // Typ prüfen
+    if (!file.type || !file.type.startsWith('image/')) {
+      showError('Bitte nur Bilddateien hochladen.');
+      resetImage(true);
+      return;
+    }
 
-      const file = uploadInput.files[0];
+    // Vorschau anzeigen
+    const img = document.createElement('img');
+    img.src = URL.createObjectURL(file);
+    img.classList.add('preview-image');
 
-      // Preview leeren
-      preview.innerHTML = '';
+    if (preview) preview.appendChild(img);
+    if (removeBtn) removeBtn.style.display = 'inline-block';
+  });
+}
 
-      if (!file) return;
+// Entfernen Button
+if (removeBtn) {
+  removeBtn.addEventListener('click', () => {
+    resetImage();
+  });
+}
 
-      const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
-
-      // Dateigröße prüfen
-      if (file.size > MAX_FILE_SIZE) {
-        showError('Das Bild darf maximal 5 MB groß sein.');
-        uploadInput.value = '';
-        return;
-      }
-
-      // Typ prüfen
-      if (!file.type.startsWith('image/')) {
-        showError('Bitte nur Bilddateien hochladen.');
-        uploadInput.value = '';
-        return;
-      }
-
-      // Vorschau anzeigen
-      const img = document.createElement('img');
-      img.src = URL.createObjectURL(file);
-      img.style.maxWidth = '300px';
-      img.alt = 'Vorschau';
-
-      preview.appendChild(img);
-    });
-  }
-</script>
 </script>
 
 </body>

@@ -388,6 +388,39 @@ textarea::placeholder {
   color: #e07a7a;
 }
 
+/* Optional: Hover Effekt für Vorschau */
+.image-preview {
+  margin-top: 10px;
+}
+
+.preview-image {
+  max-width: 250px;
+  border-radius: 12px;
+  margin-top: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.preview-image:hover {
+  transform: scale(1.03);
+}
+
+/* Entfernen Button für Bildvorschau */
+.remove-image {
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid #c9b37e;
+  color: #c9b37e;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.remove-image:hover {
+  background: #c9b37e;
+  color: #1e1b18;
+}
 
 
 
