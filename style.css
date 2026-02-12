@@ -464,7 +464,7 @@ textarea::placeholder {
   position: absolute;
   inset: 0;
 
-  background-image: url("assets/about-bg.jpeg");
+  background-image: url("assets/about-bg_cut.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
