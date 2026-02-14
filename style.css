@@ -8,9 +8,9 @@
 
   --bg-main: #0B132B;        /* Tiefes Nachtblau */
   --bg-section: #1C2541;     /* Sektionen */
-  --bg-card: #24305E;        /* Karten / Boxen */
-  --bg-product-card: #ffffff; /* Produktkarten */
-  --text-product: #1a1a1a;    /* Produkttext */
+  --bg-card: #24305e;        /* Karten / Boxen */
+  --bg-product-card: #24305e; /* Produktkarten */
+  --text-product: #e6d9a2d9;    /* Produkttext */
 
   --text-main: #EAEAEA;      /* Haupttext */
   --text-muted: #000000;     /* Nebentext */
@@ -188,11 +188,13 @@ body {
 
   /* Padding → Größe des Buttons (z.B. padding: 16px 24px macht ihn größer). */
   padding: 12px 20px;
+
   /* border-radius → Rundung (z.B. 12px statt 999px). */
   border-radius: 999px;
 
   /* background-color (RGBA) → Deckkraft/ Farbe (z.B. rgba(230,217,162,0.95)). */
-  background-color: rgba(230, 217, 162, 0.85);
+  background-color: #e6d9a2d9;
+
   /* backdrop-filter: blur(...) → Unschärfe-Effekt hinter dem Button. */
   backdrop-filter: blur(6px);
 
