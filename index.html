@@ -44,6 +44,12 @@
         <!-- Call-to-Action -->
         <a href="bestellung.html" class="cta-button">Jetzt bestellen</a>
     </div>
+
+    <!-- scroll prompt arrows -->
+    <div class="scroll-down-arrows" id="scrollPrompt">
+        <div class="arrow"></div>
+        <div class="arrow"></div>
+    </div>
 </section>
 
 <section class="about" id="about">
@@ -77,28 +83,40 @@ Jedes Stück ist ein kleines Kunstwerk – geschaffen mit Ruhe, Präzision und L
 
             <div class="soft-glass-card">
                 <div class="product-image">
-                    <img src="assets/Torte.jpeg" alt="Torten">
+                    <img src="assets\Sahnetorte.jpeg" alt="Sahnetorte">
                 </div>
-                <h3 class="product-name">Torten</h3>
+                <h3 class="product-name">Sahnetorte</h3>
             </div>
 
-            <div class="product-item">
+            <div class="soft-glass-card">
                 <div class="product-image">
-                    <img src="assets/Suesse Fours.jpeg" alt="Petit Fours">
+                    <img src="assets\Cake_Pops.jpeg" alt="Cake Pops">
                 </div>
-                <h3 class="product-name">Petit Fours</h3>
+                <h3 class="product-name">Cake Pops</h3>
             </div>
 
-            <div class="product-item">
+            <div class="soft-glass-card">
                 <div class="product-image">
                     <img src="assets/Macarons.jpeg" alt="Macarons">
                 </div>
                 <h3 class="product-name">Macarons</h3>
             </div>
 
+            <div class="soft-glass-card">
+                <div class="product-image">
+                    <img src="assets\Butterkremtorte.jpeg" alt="Butterkremtorte">
+                </div>
+                <h3 class="product-name">Butterkremtorte</h3>
+            </div>
             
+             <div class="soft-glass-card">
+                <div class="product-image">
+                    <img src="assets\Mousse-Torte.jpeg" alt="Mousse-Torte">
+                </div>
+                <h3 class="product-name">Mousse-Torte</h3>
+            </div>
         <!-- Buttons unterhalb des Product-grid -->
-        </div>
+        
         <!-- Galerie Button -->
             <div class="gallery-cta">
                 <a href="gallery.html" class="cta-button outline">
@@ -127,10 +145,18 @@ Jedes Stück ist ein kleines Kunstwerk – geschaffen mit Ruhe, Präzision und L
 
 <script>
   const cta = document.querySelector('.floating-cta');
+  const scrollPrompt = document.getElementById('scrollPrompt');
 
   if (cta) {
     window.addEventListener('scroll', () => {
       cta.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  }
+
+  if (scrollPrompt) {
+    window.addEventListener('scroll', () => {
+      // fade out arrows when user starts scrolling downward
+      scrollPrompt.classList.toggle('hidden', window.scrollY > 10);
     });
   }
 </script>

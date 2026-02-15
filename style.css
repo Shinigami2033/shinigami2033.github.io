@@ -18,6 +18,29 @@
   --border-soft: rgba(255,255,255,0.08);
 }
 
+/* Unbesuchter Link (Standard) */
+a:link {
+  color: green;
+  text-decoration: none; /* Unterstreichung entfernen */
+}
+
+/* Besuchter Link */
+a:visited {
+  color: purple;
+}
+
+/* Mauszeiger über dem Link */
+a:hover {
+  color: red;
+  text-decoration: underline; /* Unterstreichung beim Hover */
+}
+
+/* Aktiver Link (gerade geklickt) */
+a:active {
+  color: yellow;
+}
+
+
 /* Globale Scroll-Verhalten */
 html {
   scroll-behavior: smooth;
@@ -113,6 +136,45 @@ body {
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: 4rem;
+}
+
+/* scroll prompt arrows at top of hero */
+.scroll-down-arrows {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+
+.scroll-down-arrows.hidden {
+  opacity: 0;
+}
+
+.scroll-down-arrows .arrow {
+  width: 24px;
+  height: 24px;
+  border-bottom: 2px solid var(--text-main);
+  border-right: 2px solid var(--text-main);
+  transform: rotate(45deg);
+  animation: arrow-bounce 2.1s infinite;
+}
+
+.scroll-down-arrows .arrow:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+@keyframes arrow-bounce {
+  0% { transform: rotate(45deg) translateY(0); opacity: 1; }
+  50% { transform: rotate(45deg) translateY(8px); opacity: 0.4; }
+  100% { transform: rotate(45deg) translateY(0); opacity: 1; }
 }
 
 .hero p {
@@ -260,10 +322,10 @@ body {
 .product-image {
   width: 100%;
   height: 220px;              /* Einheitliche Höhe */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  display: flex; /* Flexbox für Zentrierung */
+  align-items: center; /* Vertikal zentrieren */
+  justify-content: center; /* Zentriert das Bild in der Box */
+  overflow: hidden; /* Verhindert Überlaufen */
   border-radius: 12px; /* Sanfte Rundung für die Bildbox vorher 10px */
 }
 
@@ -283,7 +345,7 @@ body {
 /* Einheitlicher Produktname mit sanften Farben */
 .product-name {
   font-size: 1.2rem;
-  margin: 15px 0 10px;
+  margin: 15px 0 12px;
   color: var(--text-product);
   font-weight: 500;
 }
@@ -299,12 +361,13 @@ body {
 
 
 .soft-glass-card {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  position: relative;
-  overflow: hidden;
-
+  background: rgba(255, 255, 255, 0.08); /* Leicht transparentes Weiß für den Glas-Effekt */
+  backdrop-filter: blur(16px); /* Weicher Unschärfe-Effekt für den Glas-Look */
+  -webkit-backdrop-filter: blur(16px); /* Safari Unterstützung */
+  position: relative; /* Für eventuelle Pseudo-Elemente oder absolute Positionierung */
+  overflow: hidden; /* Verhindert, dass Inhalte über die abgerundeten Ecken hinausgehen */
+  text-align: center; /* Zentrierter Text, kann je nach Bedarf angepasst werden */
+  
   border-radius: 20px;
   padding: 20px;
 
@@ -350,9 +413,7 @@ body {
   );
   pointer-events: none;
 }
-
-
-
+*/
 
 
 /* ========================================= */
@@ -790,7 +851,7 @@ textarea::placeholder {
     margin-bottom: 16px;
   }
 }
-
+*/
 
 
 /* ==============================
