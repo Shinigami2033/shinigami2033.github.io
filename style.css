@@ -1035,24 +1035,25 @@ textarea::placeholder {
   }
 
 /* ---------- Galerie Seite ---------- */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* ✅ 2 Spalten auf Mobile */
-  gap: 16px;
-}
+/* (Mobilgeräte-spezifische Anpassungen werden bereits zuvor über die
+   oben genannten eigenständigen responsiven Medienabfragen behandelt; das Folgende war ein
+   Duplikat, das ein Rasterlayout erzwang und die Masonry-Regeln für die
+   Spaltenanzahl aufhob.  Es hier zu belassen würde das Pinterest-ähnliche
+   Layout auf schmalen Bildschirmen zerstören, daher wurde es entfernt.) */
 
-.gallery-grid img {
-  width: 100%;
-  height: 180px;          /* größer & ruhiger */
-  object-fit: cover;     /* füllt Kachel sauber */
-  border-radius: 14px;
-}
+/* Wenn Sie die Schriftgröße der Einleitung oder die Bildabmessungen auf
+   kleinen Bildschirmen anpassen möchten, können Sie hier eine kleine Hilfsregel hinzufügen, aber vermeiden Sie es,
+   „display” aus dem spaltenbasierten Layout zurückzusetzen. */
 
-.gallery-intro {
-  font-size: 1rem;
-  padding: 0 10px;
-  text-align: center;
+/* example:
+@media (max-width: 768px) {
+  .gallery-intro {
+    font-size: 1rem;
+    padding: 0 10px;
+    text-align: center;
+  }
 }
+*/
 
 }
 
