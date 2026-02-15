@@ -760,13 +760,14 @@ textarea::placeholder {
 }
 
 /* ---------- Responsive ---------- */
-
+/* Auf großen Bildschirmen 4 Spalten, auf mittleren 3, auf kleinen 2 und auf sehr kleinen 1 Spalte. */
 @media (max-width: 1200px) {
   .gallery-grid {
     column-count: 3;
   }
 }
 
+/* Auf Tablets auf 2 Spalten reduzieren */
 @media (max-width: 768px) {
   .gallery-grid {
     column-count: 2;
@@ -778,7 +779,8 @@ textarea::placeholder {
   }
 }
 
-
+/* Auf sehr kleinen Bildschirmen (z.B. Smartphones) auf 1 Spalte reduzieren */
+/*
 @media (max-width: 480px) {
   .gallery-grid {
     column-count: 1;
