@@ -248,7 +248,7 @@ body {
 .product-item {
   padding: 20px;
   text-align: center;
-  border-radius: 12px;
+  border-radius: 18px;  /* Sanfte Rundung für die Produktkarten vorher 12px */
   background: var(--bg-product-card);
   box-shadow: 0 10px 30px rgba(0,0,0,.4);
 }
@@ -260,7 +260,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 12px; /* Sanfte Rundung für die Bildbox vorher 10px */
 }
 /* Bildanpassung ohne Zuschneiden */
 .product-image img {
@@ -268,6 +268,7 @@ body {
   max-height: 100%;
   object-fit: contain;        /* ← KEIN Zuschneiden */
   transition: transform 0.4s ease;
+  border-radius: 14px;  /* Sanfte Rundung für die Bilder selbst vorher 12px */
 }
 /* Optionaler Hover-Effekt */
 .product-item:hover .product-image img {
