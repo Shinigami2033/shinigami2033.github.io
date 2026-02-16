@@ -40,7 +40,6 @@ a:active {
   color: yellow;
 }
 
-
 /* Globale Scroll-Verhalten */
 html {
   scroll-behavior: smooth;
@@ -201,7 +200,19 @@ body {
   font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: transform 0.3s, filter 0.3s;
+  transition: transform 0.3s, filter 0.3s;  
+}
+
+/* Ensure buttons always maintain their color, overriding link styles */
+.cta-button:link,
+.cta-button:visited,
+.cta-button:hover,
+.cta-button:active,
+.submit-button:link,
+.submit-button:visited,
+.submit-button:hover,
+.submit-button:active {
+  color: oklab(21.779% 0 -0.00002);
 }
 
 /* Hover-Effekt */
@@ -209,6 +220,7 @@ body {
 .submit-button:hover {
   transform: scale(1.05);
   filter: brightness(1.1);
+  text-decoration: none;
 }
 
 /* Submit Button soll volle Breite behalten */
@@ -224,6 +236,7 @@ body {
   flex-wrap: wrap;
   gap: 16px;
   text-align: center;
+  
 }
 
 .cta-button.outline {
@@ -260,10 +273,10 @@ body {
   /* backdrop-filter: blur(...) → Unschärfe-Effekt hinter dem Button. */
   backdrop-filter: blur(6px);
 
-  color: #1a1a1a;
+  color: #1a1a1a; /* Textfarbe */
   font-weight: 600;
   text-decoration: none;
-
+  
   /* box-shadow → sichtbare Tiefe (größere Werte = stärkere Schatten). */
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 
@@ -561,9 +574,6 @@ textarea::placeholder {
   color: #1e1b18;
 }
 
-
-
-
 /* ========================================= */
 /* 9. FOOTER                                 */
 /* ========================================= */
@@ -578,6 +588,10 @@ textarea::placeholder {
   color: white;
   margin: 0 10px;
   text-decoration: none;
+}
+
+.footer p {
+  color: white;
 }
 
 /* ==============================
