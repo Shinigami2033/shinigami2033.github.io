@@ -23,28 +23,27 @@
         ich melde mich persönlich bei dir zurück.
       </p>
 
-      <!-- Formspree Formular -->
-      <form action="https://formspree.io/f/xykyrely"
+      <!-- Submify Formular -->
+      <form action="https://submify.vercel.app/info@mondschein-konditorei.de"
             method="POST"
+            enctype="multipart/form-data"
             class="order-form">
-
+        <!-- Web3Forms API Key -->
+        <!--  <input type="hidden" name="access_key" value="tly-8icv1jv7soEpmGGJDUpk81YRV6HwJz64">
+        -->
+        <label> Felder mit * sind Pflichtfelder</label>
         <label>
-          Name
+          *Name
           <input type="text" name="name" required>
         </label>
 
         <label>
-          E-Mail
+          *E-Mail
           <input type="email" name="email" required>
         </label>
 
         <label>
-          Anlass
-          <input type="text" name="occasion">
-        </label>
-
-        <label>
-          Produktart
+          *Produktart
           <select name="product_type" required>
             <option value="" disabled selected>Bitte wählen</option>
             <option value="Torte">Torte</option>
@@ -56,17 +55,17 @@
         </label> 
 
         <label>
-          Geschmacksrichtung
+          *Geschmacksrichtung
           <input type="text" name="flavor" required>
         </label>
         
         <label>
-          Größe / Menge
+          *Größe / Menge
           <input type="text" name="size_quantity" required>
         </label>
 
         <label>
-          Alkohol
+          *Alkohol
           <div class="radio-group">
             <label class="radio-option">
               <input type="radio" name="alcohol" value="Mit Alkohol" required>
@@ -81,7 +80,7 @@
         </label>
 
         <label>
-          Besondere Wünsche / Anmerkungen
+          Besondere Wünsche / Anmerkungen (optional)
           <input type="text" name="special_requests">
         </label>
 
@@ -91,7 +90,7 @@
         </label>  
 
         <label>
-          Abhol- oder Lieferdatum
+          *Abhol- oder Lieferdatum
           <input type="date" name="pickup_delivery_date" required>
         </label>
 
@@ -100,8 +99,8 @@
         </label>
 
         <label>
-          Telefonnummer (optional)
-          <input type="tel" name="phone">
+          *Telefonnummer
+          <input type="tel" name="phone" required>
         </label>
 
         <label>
@@ -111,18 +110,40 @@
 
         <label>
           Nachricht
-          <textarea name="message" rows="5" required></textarea>
+          <textarea name="message" rows="5"></textarea>
         </label>
 
+        <label>
+          Referenzbild (optional)
+          <input
+          type="file"
+          name="reference_image"
+          accept="image/png, image/jpeg, image/jpg, image/gif"
+          id="imageUpload">        
+        </label>
+        <div id="imagePreview" class="image-preview"></div>
+        <button type="button" id="removeImageBtn" class="remove-image" style="display:none;">
+        Bild entfernen
+        </button>
+
+        <div id="uploadError" class="upload-error"></div>
+        
+        <label> max. 5 MB pro Bild 
+          <br>
+           max. 1 Bilder</label>
+        
         <button type="submit" class="submit-button">
           Anfrage senden
         </button>
-
+        <label>
+          Mit dem Absenden dieses Formulars erklärst du dich damit einverstanden, dass deine Daten gemäß unserer <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> verarbeitet werden。
+        </label>
       </form>
 
     </div>
   </main>
   </div>
+  <!-- JavaScript für Scroll-Effekt der CTA -->
 <script>
   const cta = document.querySelector('.floating-cta');
 
@@ -131,6 +152,87 @@
       cta.classList.toggle('scrolled', window.scrollY > 20);
     });
   }
+</script>
+
+<!-- JavaScript für Bildvorschau -->
+<script>
+const uploadInput = document.getElementById('imageUpload');
+const preview = document.getElementById('imagePreview');
+const removeBtn = document.getElementById('removeImageBtn');
+const errorBox = document.getElementById('uploadError');
+
+const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
+
+function showError(message) {
+  if (errorBox) {
+    errorBox.textContent = message;
+    errorBox.style.display = 'block';
+    errorBox.setAttribute('role', 'alert');
+  } else {
+    console.error('Upload error:', message);
+  }
+}
+
+function clearError() {
+  if (errorBox) {
+    errorBox.textContent = '';
+    errorBox.style.display = '';
+    errorBox.removeAttribute('role');
+  }
+}
+
+function resetImage(preserveError = false) {
+  if (uploadInput) uploadInput.value = '';
+  if (preview) preview.innerHTML = '';
+  if (removeBtn) removeBtn.style.display = 'none';
+  if (!preserveError) clearError();
+}
+
+if (uploadInput) {
+  uploadInput.addEventListener('change', () => {
+    clearError();
+    if (preview) preview.innerHTML = '';
+
+    const file = uploadInput.files[0];
+    if (!file) return;
+
+    if (uploadInput.files.length > 1) {
+      showError('Bitte maximal 1 Bild auswählen.');
+      resetImage(true);
+      return;
+    }
+
+    // Dateigröße prüfen
+    if (file.size > MAX_FILE_SIZE) {
+      showError('Das Bild darf maximal 5 MB groß sein.');
+      resetImage(true);
+      return;
+    }
+
+    // Typ prüfen
+    if (!file.type || !file.type.startsWith('image/')) {
+      showError('Bitte nur Bilddateien hochladen.');
+      resetImage(true);
+      return;
+    }
+
+    // Vorschau anzeigen
+    const img = document.createElement('img');
+    img.src = URL.createObjectURL(file);
+    img.classList.add('preview-image');
+
+    if (preview) preview.appendChild(img);
+    if (removeBtn) removeBtn.style.display = 'inline-block';
+  });
+}
+
+// Entfernen Button
+if (removeBtn) {
+  removeBtn.addEventListener('click', () => {
+    resetImage();
+  });
+}
+
 </script>
 
 </body>
