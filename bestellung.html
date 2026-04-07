@@ -24,10 +24,13 @@
       </p>
 
       <!-- Submify Formular -->
-      <form action="https://submify.vercel.app/info@mondschein-konditorei.de"
+      <form id="orderForm"
+            action="https://submify.vercel.app/info@mondschein-konditorei.de"
             method="POST"
             enctype="multipart/form-data"
             class="order-form">
+        <input type="hidden" name="_next" id="nextUrlField" value="">
+        <input type="hidden" name="redirect" id="redirectUrlField" value="">
         <!-- Web3Forms API Key -->
         <!--  <input type="hidden" name="access_key" value="tly-8icv1jv7soEpmGGJDUpk81YRV6HwJz64">
         -->
@@ -160,6 +163,9 @@ const uploadInput = document.getElementById('imageUpload');
 const preview = document.getElementById('imagePreview');
 const removeBtn = document.getElementById('removeImageBtn');
 const errorBox = document.getElementById('uploadError');
+const orderForm = document.getElementById('orderForm');
+const nextUrlField = document.getElementById('nextUrlField');
+const redirectUrlField = document.getElementById('redirectUrlField');
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
 
@@ -230,6 +236,38 @@ if (uploadInput) {
 if (removeBtn) {
   removeBtn.addEventListener('click', () => {
     resetImage();
+  });
+}
+
+if (nextUrlField || redirectUrlField) {
+  const thankYouUrl = new URL('leitung.html', window.location.href).toString();
+  if (nextUrlField) nextUrlField.value = thankYouUrl;
+  if (redirectUrlField) redirectUrlField.value = thankYouUrl;
+}
+
+if (orderForm) {
+  orderForm.addEventListener('submit', async (event) => {
+    const submitBtn = orderForm.querySelector('.submit-button');
+
+    // Progressive enhancement: per Fetch senden und danach lokal weiterleiten.
+    if (!window.fetch || !window.FormData) return;
+
+    event.preventDefault();
+    if (submitBtn) submitBtn.disabled = true;
+
+    try {
+      const formData = new FormData(orderForm);
+      const response = await fetch(orderForm.action, {
+        method: 'POST',
+        body: formData
+      });
+
+      if (!response.ok) throw new Error(`Request failed: ${response.status}`);
+      window.location.href = 'leitung.html';
+    } catch (error) {
+      if (submitBtn) submitBtn.disabled = false;
+      orderForm.submit();
+    }
   });
 }
 
